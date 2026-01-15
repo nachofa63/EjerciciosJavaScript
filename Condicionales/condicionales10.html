@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Permiso de acceso</title>
+</head>
+<body>
+
+<h2>Comprobación de edad</h2>
+
+<script>
+    let edad;
+
+    // Validación de la edad
+    do {
+        edad = parseInt(prompt("Introduce tu edad (entre 1 y 120 años):"));
+    } while (isNaN(edad) || edad < 1 || edad > 120);
+
+    // Comprobación de acceso
+    if (edad > 18) {
+        document.write("Sí tiene permiso de acceso");
+    } else {
+        document.write("No tiene permiso de acceso");
+    }
+</script>
+
+</body>
+</html>

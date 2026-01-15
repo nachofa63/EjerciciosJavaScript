@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso Portal Web</title>
+</head>
+<body>
+
+<h2>Acceso al portal web</h2>
+
+<script>
+    // Pedir datos al usuario
+    let esFP = prompt("¿El alumno es de FP? (SI/NO)").toUpperCase();
+    let edad = parseInt(prompt("Introduce la edad del alumno"));
+
+    // Condición optimizada
+    if (esFP === "SI" && edad > 18) {
+        document.write("Bienvenid@");
+    } else {
+        document.write("No tiene acceso al portal web");
+    }
+</script>
+
+</body>
+</html>
