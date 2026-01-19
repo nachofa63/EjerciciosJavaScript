@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular 10%</title>
+</head>
+<body>
+
+<h2>Calcular el 10% de un número</h2>
+
+<form onsubmit="calcularPorcentaje(); return false;">
+    <label for="numero">Introduce un número:</label><br>
+    <input type="number" id="numero" required><br><br>
+    <button type="submit">Calcular 10%</button>
+</form>
+
+<p id="resultado"></p>
+
+<script>
+function calcularPorcentaje() {
+    const valor = document.getElementById("numero").value;
+    const diezPorciento = valor * 0.10;
+    document.getElementById("resultado").textContent = 
+        "El 10% de " + valor + " es: " + diezPorciento;
+}
+</script>
+
+</body>
+</html>

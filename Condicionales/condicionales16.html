@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Días del Mes</title>
+</head>
+<body>
+    <h2>¿Cuántos días tiene el mes?</h2>
+
+    <label for="mes">Introduce el número del mes (1–12): </label>
+    <input type="number" id="mes" min="1" max="12" oninput="validarMes()">
+    <button onclick="verDias()">Ver días</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarMes() {
+            const input = document.getElementById("mes");
+            let valor = parseInt(input.value);
+
+            if (valor < 1 || valor > 12) {
+                input.value = ""; // Borra el valor si no está en el rango
+            }
+        }
+
+        function verDias() {
+            const mes = parseInt(document.getElementById("mes").value);
+            let resultado = "";
+
+            if (isNaN(mes)) {
+                resultado = "Por favor, introduce un número válido entre 1 y 12.";
+            } else if (mes === 2) {
+                resultado = "Febrero tiene 28 días (29 si es año bisiesto).";
+            } else if (mes === 4 || mes === 6 || mes === 9 || mes === 11) {
+                resultado = "Este mes tiene 30 días.";
+            } else {
+                resultado = "Este mes tiene 31 días.";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>
